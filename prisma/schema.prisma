@@ -1,0 +1,76 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String        @id @default(uuid())
+  name         String
+  email        String        @unique
+  password     String
+  role         String        @default("user") // 'user' or 'admin'
+  vehicles     Vehicle[]
+  slotRequests SlotRequest[]
+  auditLogs    AuditLog[]
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+}
+
+model Vehicle {
+  id           String       @id @default(uuid())
+  plateNumber  String       @unique
+  vehicleType  String       // "car", "motorcycle", "truck"
+  size         String       // "small", "medium", "large"
+  color        String?
+  userId       String
+  user         User?         @relation(fields: [userId], references: [id])
+  slotRequests SlotRequest[]
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+}
+
+model ParkingSlot {
+  id           String        @id @default(uuid())
+  slotNumber   String        @unique
+  size         String        // "small", "medium", "large"
+  vehicleType  String        // "car", "motorcycle", "truck"
+  status       String        @default("available") // "available" or "unavailable"
+  location     String?       // "north", "south", "east", "west"
+  slotRequests SlotRequest[]
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+
+  @@index([slotNumber])
+  @@index([status])
+}
+
+model SlotRequest {
+  id          String       @id @default(uuid())
+  userId      String
+  user        User         @relation(fields: [userId], references: [id])
+  vehicleId   String
+  vehicle     Vehicle      @relation(fields: [vehicleId], references: [id])
+  slotId      String?      // Null until approved
+  slot        ParkingSlot? @relation(fields: [slotId], references: [id])
+  status      String       @default("pending") // "pending", "approved", "rejected"
+  rejectionReason String?
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+
+  @@index([userId])
+  @@index([status])
+}
+
+model AuditLog {
+  id        String   @id @default(uuid())
+  userId    String?
+  user      User?    @relation(fields: [userId], references: [id])
+  action    String   // "request_approved", "slot_created", etc.
+  metadata  Json?    // { slotId: "123", vehicleId: "456" }
+  createdAt DateTime @default(now())
+}
