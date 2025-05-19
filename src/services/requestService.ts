@@ -5,22 +5,34 @@ import { logger } from "../utils/logger";
 
 const prisma = new PrismaClient();
 
-export const createRequest = async (userId: string, vehicleId: string) => {
+export const createRequest = async (input: {
+  userId: string;
+  vehicleId: string;
+  plateNumber: string;
+  duration?: number;
+}) => {
   try {
     const request = await prisma.slotRequest.create({
-      data: { userId, vehicleId, status: "pending" },
+      data: {
+        userId: input.userId,
+        vehicleId: input.vehicleId,
+        plateNumber: input.plateNumber,
+        duration: input.duration,
+        entryTime: new Date(),
+        status: "pending"
+      },
     });
     
     await logger.info(
-      userId,
+      input.userId,
       "request_created",
-      { requestId: request.id, vehicleId }
+      { requestId: request.id, vehicleId: input.vehicleId }
     );
     
     return request;
   } catch (error) {
     await logger.error(
-      userId,
+      input.userId,
       "request_creation_failed",
       error instanceof Error ? error : new Error(String(error))
     );
@@ -172,6 +184,40 @@ export const listRequests = async (
     await logger.error(
       userId || null,
       "request_listing_failed",
+      error instanceof Error ? error : new Error(String(error))
+    );
+    throw error;
+  }
+};
+
+export const deleteRequest = async (requestId: string, userId: string) => {
+  try {
+    // Find the request and verify it belongs to the user
+    const request = await prisma.slotRequest.findUnique({
+      where: { id: requestId },
+      include: { user: { select: { id: true } } },
+    });
+
+    if (!request) throw new Error("Request not found");
+    if (request.userId !== userId) throw new Error("Unauthorized: You can only delete your own requests");
+    if (request.status !== "pending") throw new Error("Only pending requests can be deleted");
+
+    // Delete the request
+    await prisma.slotRequest.delete({
+      where: { id: requestId },
+    });
+
+    await logger.info(
+      userId,
+      "request_deleted",
+      { requestId }
+    );
+
+    return { message: "Request deleted successfully" };
+  } catch (error) {
+    await logger.error(
+      userId,
+      "request_deletion_failed",
       error instanceof Error ? error : new Error(String(error))
     );
     throw error;

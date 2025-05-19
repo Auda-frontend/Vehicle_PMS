@@ -51,6 +51,13 @@ model ParkingSlot {
 
 model SlotRequest {
   id              String       @id @default(uuid())
+  plateNumber     String
+  entryTime       DateTime
+  exitTime        DateTime?
+  duration        Int?
+  amountDue       Float?
+  paymentMethod   String? // "cash", "momo", "credit_card"
+  receiptSent     Boolean      @default(false)
   userId          String
   user            User         @relation(fields: [userId], references: [id])
   vehicleId       String

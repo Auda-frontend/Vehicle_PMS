@@ -154,13 +154,6 @@ exports.Prisma.ParkingSlotScalarFieldEnum = {
 
 exports.Prisma.SlotRequestScalarFieldEnum = {
   id: 'id',
-  plateNumber: 'plateNumber',
-  entryTime: 'entryTime',
-  exitTime: 'exitTime',
-  duration: 'duration',
-  amountDue: 'amountDue',
-  paymentMethod: 'paymentMethod',
-  receiptSent: 'receiptSent',
   userId: 'userId',
   vehicleId: 'vehicleId',
   slotId: 'slotId',

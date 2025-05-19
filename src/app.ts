@@ -9,6 +9,7 @@ import vehicleRoutes from './routes/vehicleRoutes';
 import slotRoutes from './routes/slotRoutes';
 import requestRoutes from './routes/requestRoutes';
 import statsRoutes from "./routes/statsRoute";
+import paymentRoutes from "./routes/paymentRoutes";
 
 const app = express();
 
@@ -31,6 +32,7 @@ app.use("/api/v1/vehicles", vehicleRoutes);
 app.use("/api/v1/admin/slots", slotRoutes);
 app.use("/api/v1/requests", requestRoutes);
 app.use("/api/v1/admin", statsRoutes);
+app.use('/api/v1/payments', paymentRoutes);
 
 //Health Check
 app.get('/health', (req, res) => {

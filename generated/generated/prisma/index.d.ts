@@ -4756,31 +4756,12 @@ export namespace Prisma {
 
   export type AggregateSlotRequest = {
     _count: SlotRequestCountAggregateOutputType | null
-    _avg: SlotRequestAvgAggregateOutputType | null
-    _sum: SlotRequestSumAggregateOutputType | null
     _min: SlotRequestMinAggregateOutputType | null
     _max: SlotRequestMaxAggregateOutputType | null
   }
 
-  export type SlotRequestAvgAggregateOutputType = {
-    duration: number | null
-    amountDue: number | null
-  }
-
-  export type SlotRequestSumAggregateOutputType = {
-    duration: number | null
-    amountDue: number | null
-  }
-
   export type SlotRequestMinAggregateOutputType = {
     id: string | null
-    plateNumber: string | null
-    entryTime: Date | null
-    exitTime: Date | null
-    duration: number | null
-    amountDue: number | null
-    paymentMethod: string | null
-    receiptSent: boolean | null
     userId: string | null
     vehicleId: string | null
     slotId: string | null
@@ -4792,13 +4773,6 @@ export namespace Prisma {
 
   export type SlotRequestMaxAggregateOutputType = {
     id: string | null
-    plateNumber: string | null
-    entryTime: Date | null
-    exitTime: Date | null
-    duration: number | null
-    amountDue: number | null
-    paymentMethod: string | null
-    receiptSent: boolean | null
     userId: string | null
     vehicleId: string | null
     slotId: string | null
@@ -4810,13 +4784,6 @@ export namespace Prisma {
 
   export type SlotRequestCountAggregateOutputType = {
     id: number
-    plateNumber: number
-    entryTime: number
-    exitTime: number
-    duration: number
-    amountDue: number
-    paymentMethod: number
-    receiptSent: number
     userId: number
     vehicleId: number
     slotId: number
@@ -4828,25 +4795,8 @@ export namespace Prisma {
   }
 
 
-  export type SlotRequestAvgAggregateInputType = {
-    duration?: true
-    amountDue?: true
-  }
-
-  export type SlotRequestSumAggregateInputType = {
-    duration?: true
-    amountDue?: true
-  }
-
   export type SlotRequestMinAggregateInputType = {
     id?: true
-    plateNumber?: true
-    entryTime?: true
-    exitTime?: true
-    duration?: true
-    amountDue?: true
-    paymentMethod?: true
-    receiptSent?: true
     userId?: true
     vehicleId?: true
     slotId?: true
@@ -4858,13 +4808,6 @@ export namespace Prisma {
 
   export type SlotRequestMaxAggregateInputType = {
     id?: true
-    plateNumber?: true
-    entryTime?: true
-    exitTime?: true
-    duration?: true
-    amountDue?: true
-    paymentMethod?: true
-    receiptSent?: true
     userId?: true
     vehicleId?: true
     slotId?: true
@@ -4876,13 +4819,6 @@ export namespace Prisma {
 
   export type SlotRequestCountAggregateInputType = {
     id?: true
-    plateNumber?: true
-    entryTime?: true
-    exitTime?: true
-    duration?: true
-    amountDue?: true
-    paymentMethod?: true
-    receiptSent?: true
     userId?: true
     vehicleId?: true
     slotId?: true
@@ -4931,18 +4867,6 @@ export namespace Prisma {
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
-     * Select which fields to average
-    **/
-    _avg?: SlotRequestAvgAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to sum
-    **/
-    _sum?: SlotRequestSumAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
      * Select which fields to find the minimum value
     **/
     _min?: SlotRequestMinAggregateInputType
@@ -4973,21 +4897,12 @@ export namespace Prisma {
     take?: number
     skip?: number
     _count?: SlotRequestCountAggregateInputType | true
-    _avg?: SlotRequestAvgAggregateInputType
-    _sum?: SlotRequestSumAggregateInputType
     _min?: SlotRequestMinAggregateInputType
     _max?: SlotRequestMaxAggregateInputType
   }
 
   export type SlotRequestGroupByOutputType = {
     id: string
-    plateNumber: string
-    entryTime: Date
-    exitTime: Date | null
-    duration: number | null
-    amountDue: number | null
-    paymentMethod: string | null
-    receiptSent: boolean
     userId: string
     vehicleId: string
     slotId: string | null
@@ -4996,8 +4911,6 @@ export namespace Prisma {
     createdAt: Date
     updatedAt: Date
     _count: SlotRequestCountAggregateOutputType | null
-    _avg: SlotRequestAvgAggregateOutputType | null
-    _sum: SlotRequestSumAggregateOutputType | null
     _min: SlotRequestMinAggregateOutputType | null
     _max: SlotRequestMaxAggregateOutputType | null
   }
@@ -5018,13 +4931,6 @@ export namespace Prisma {
 
   export type SlotRequestSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    plateNumber?: boolean
-    entryTime?: boolean
-    exitTime?: boolean
-    duration?: boolean
-    amountDue?: boolean
-    paymentMethod?: boolean
-    receiptSent?: boolean
     userId?: boolean
     vehicleId?: boolean
     slotId?: boolean
@@ -5039,13 +4945,6 @@ export namespace Prisma {
 
   export type SlotRequestSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    plateNumber?: boolean
-    entryTime?: boolean
-    exitTime?: boolean
-    duration?: boolean
-    amountDue?: boolean
-    paymentMethod?: boolean
-    receiptSent?: boolean
     userId?: boolean
     vehicleId?: boolean
     slotId?: boolean
@@ -5060,13 +4959,6 @@ export namespace Prisma {
 
   export type SlotRequestSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    plateNumber?: boolean
-    entryTime?: boolean
-    exitTime?: boolean
-    duration?: boolean
-    amountDue?: boolean
-    paymentMethod?: boolean
-    receiptSent?: boolean
     userId?: boolean
     vehicleId?: boolean
     slotId?: boolean
@@ -5081,13 +4973,6 @@ export namespace Prisma {
 
   export type SlotRequestSelectScalar = {
     id?: boolean
-    plateNumber?: boolean
-    entryTime?: boolean
-    exitTime?: boolean
-    duration?: boolean
-    amountDue?: boolean
-    paymentMethod?: boolean
-    receiptSent?: boolean
     userId?: boolean
     vehicleId?: boolean
     slotId?: boolean
@@ -5097,7 +4982,7 @@ export namespace Prisma {
     updatedAt?: boolean
   }
 
-  export type SlotRequestOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "plateNumber" | "entryTime" | "exitTime" | "duration" | "amountDue" | "paymentMethod" | "receiptSent" | "userId" | "vehicleId" | "slotId" | "status" | "rejectionReason" | "createdAt" | "updatedAt", ExtArgs["result"]["slotRequest"]>
+  export type SlotRequestOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "userId" | "vehicleId" | "slotId" | "status" | "rejectionReason" | "createdAt" | "updatedAt", ExtArgs["result"]["slotRequest"]>
   export type SlotRequestInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     user?: boolean | UserDefaultArgs<ExtArgs>
     vehicle?: boolean | VehicleDefaultArgs<ExtArgs>
@@ -5123,13 +5008,6 @@ export namespace Prisma {
     }
     scalars: $Extensions.GetPayloadResult<{
       id: string
-      plateNumber: string
-      entryTime: Date
-      exitTime: Date | null
-      duration: number | null
-      amountDue: number | null
-      paymentMethod: string | null
-      receiptSent: boolean
       userId: string
       vehicleId: string
       slotId: string | null
@@ -5564,13 +5442,6 @@ export namespace Prisma {
    */
   interface SlotRequestFieldRefs {
     readonly id: FieldRef<"SlotRequest", 'String'>
-    readonly plateNumber: FieldRef<"SlotRequest", 'String'>
-    readonly entryTime: FieldRef<"SlotRequest", 'DateTime'>
-    readonly exitTime: FieldRef<"SlotRequest", 'DateTime'>
-    readonly duration: FieldRef<"SlotRequest", 'Int'>
-    readonly amountDue: FieldRef<"SlotRequest", 'Float'>
-    readonly paymentMethod: FieldRef<"SlotRequest", 'String'>
-    readonly receiptSent: FieldRef<"SlotRequest", 'Boolean'>
     readonly userId: FieldRef<"SlotRequest", 'String'>
     readonly vehicleId: FieldRef<"SlotRequest", 'String'>
     readonly slotId: FieldRef<"SlotRequest", 'String'>
@@ -7141,13 +7012,6 @@ export namespace Prisma {
 
   export const SlotRequestScalarFieldEnum: {
     id: 'id',
-    plateNumber: 'plateNumber',
-    entryTime: 'entryTime',
-    exitTime: 'exitTime',
-    duration: 'duration',
-    amountDue: 'amountDue',
-    paymentMethod: 'paymentMethod',
-    receiptSent: 'receiptSent',
     userId: 'userId',
     vehicleId: 'vehicleId',
     slotId: 'slotId',
@@ -7246,41 +7110,6 @@ export namespace Prisma {
 
 
   /**
-   * Reference to a field of type 'Int'
-   */
-  export type IntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int'>
-    
-
-
-  /**
-   * Reference to a field of type 'Int[]'
-   */
-  export type ListIntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int[]'>
-    
-
-
-  /**
-   * Reference to a field of type 'Float'
-   */
-  export type FloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float'>
-    
-
-
-  /**
-   * Reference to a field of type 'Float[]'
-   */
-  export type ListFloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float[]'>
-    
-
-
-  /**
-   * Reference to a field of type 'Boolean'
-   */
-  export type BooleanFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Boolean'>
-    
-
-
-  /**
    * Reference to a field of type 'Json'
    */
   export type JsonFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Json'>
@@ -7291,6 +7120,20 @@ export namespace Prisma {
    * Reference to a field of type 'QueryMode'
    */
   export type EnumQueryModeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'QueryMode'>
+    
+
+
+  /**
+   * Reference to a field of type 'Int'
+   */
+  export type IntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int'>
+    
+
+
+  /**
+   * Reference to a field of type 'Int[]'
+   */
+  export type ListIntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int[]'>
     
   /**
    * Deep Input Types
@@ -7516,13 +7359,6 @@ export namespace Prisma {
     OR?: SlotRequestWhereInput[]
     NOT?: SlotRequestWhereInput | SlotRequestWhereInput[]
     id?: StringFilter<"SlotRequest"> | string
-    plateNumber?: StringFilter<"SlotRequest"> | string
-    entryTime?: DateTimeFilter<"SlotRequest"> | Date | string
-    exitTime?: DateTimeNullableFilter<"SlotRequest"> | Date | string | null
-    duration?: IntNullableFilter<"SlotRequest"> | number | null
-    amountDue?: FloatNullableFilter<"SlotRequest"> | number | null
-    paymentMethod?: StringNullableFilter<"SlotRequest"> | string | null
-    receiptSent?: BoolFilter<"SlotRequest"> | boolean
     userId?: StringFilter<"SlotRequest"> | string
     vehicleId?: StringFilter<"SlotRequest"> | string
     slotId?: StringNullableFilter<"SlotRequest"> | string | null
@@ -7537,13 +7373,6 @@ export namespace Prisma {
 
   export type SlotRequestOrderByWithRelationInput = {
     id?: SortOrder
-    plateNumber?: SortOrder
-    entryTime?: SortOrder
-    exitTime?: SortOrderInput | SortOrder
-    duration?: SortOrderInput | SortOrder
-    amountDue?: SortOrderInput | SortOrder
-    paymentMethod?: SortOrderInput | SortOrder
-    receiptSent?: SortOrder
     userId?: SortOrder
     vehicleId?: SortOrder
     slotId?: SortOrderInput | SortOrder
@@ -7561,13 +7390,6 @@ export namespace Prisma {
     AND?: SlotRequestWhereInput | SlotRequestWhereInput[]
     OR?: SlotRequestWhereInput[]
     NOT?: SlotRequestWhereInput | SlotRequestWhereInput[]
-    plateNumber?: StringFilter<"SlotRequest"> | string
-    entryTime?: DateTimeFilter<"SlotRequest"> | Date | string
-    exitTime?: DateTimeNullableFilter<"SlotRequest"> | Date | string | null
-    duration?: IntNullableFilter<"SlotRequest"> | number | null
-    amountDue?: FloatNullableFilter<"SlotRequest"> | number | null
-    paymentMethod?: StringNullableFilter<"SlotRequest"> | string | null
-    receiptSent?: BoolFilter<"SlotRequest"> | boolean
     userId?: StringFilter<"SlotRequest"> | string
     vehicleId?: StringFilter<"SlotRequest"> | string
     slotId?: StringNullableFilter<"SlotRequest"> | string | null
@@ -7582,13 +7404,6 @@ export namespace Prisma {
 
   export type SlotRequestOrderByWithAggregationInput = {
     id?: SortOrder
-    plateNumber?: SortOrder
-    entryTime?: SortOrder
-    exitTime?: SortOrderInput | SortOrder
-    duration?: SortOrderInput | SortOrder
-    amountDue?: SortOrderInput | SortOrder
-    paymentMethod?: SortOrderInput | SortOrder
-    receiptSent?: SortOrder
     userId?: SortOrder
     vehicleId?: SortOrder
     slotId?: SortOrderInput | SortOrder
@@ -7597,10 +7412,8 @@ export namespace Prisma {
     createdAt?: SortOrder
     updatedAt?: SortOrder
     _count?: SlotRequestCountOrderByAggregateInput
-    _avg?: SlotRequestAvgOrderByAggregateInput
     _max?: SlotRequestMaxOrderByAggregateInput
     _min?: SlotRequestMinOrderByAggregateInput
-    _sum?: SlotRequestSumOrderByAggregateInput
   }
 
   export type SlotRequestScalarWhereWithAggregatesInput = {
@@ -7608,13 +7421,6 @@ export namespace Prisma {
     OR?: SlotRequestScalarWhereWithAggregatesInput[]
     NOT?: SlotRequestScalarWhereWithAggregatesInput | SlotRequestScalarWhereWithAggregatesInput[]
     id?: StringWithAggregatesFilter<"SlotRequest"> | string
-    plateNumber?: StringWithAggregatesFilter<"SlotRequest"> | string
-    entryTime?: DateTimeWithAggregatesFilter<"SlotRequest"> | Date | string
-    exitTime?: DateTimeNullableWithAggregatesFilter<"SlotRequest"> | Date | string | null
-    duration?: IntNullableWithAggregatesFilter<"SlotRequest"> | number | null
-    amountDue?: FloatNullableWithAggregatesFilter<"SlotRequest"> | number | null
-    paymentMethod?: StringNullableWithAggregatesFilter<"SlotRequest"> | string | null
-    receiptSent?: BoolWithAggregatesFilter<"SlotRequest"> | boolean
     userId?: StringWithAggregatesFilter<"SlotRequest"> | string
     vehicleId?: StringWithAggregatesFilter<"SlotRequest"> | string
     slotId?: StringNullableWithAggregatesFilter<"SlotRequest"> | string | null
@@ -7924,13 +7730,6 @@ export namespace Prisma {
 
   export type SlotRequestCreateInput = {
     id?: string
-    plateNumber: string
-    entryTime: Date | string
-    exitTime?: Date | string | null
-    duration?: number | null
-    amountDue?: number | null
-    paymentMethod?: string | null
-    receiptSent?: boolean
     status?: string
     rejectionReason?: string | null
     createdAt?: Date | string
@@ -7942,13 +7741,6 @@ export namespace Prisma {
 
   export type SlotRequestUncheckedCreateInput = {
     id?: string
-    plateNumber: string
-    entryTime: Date | string
-    exitTime?: Date | string | null
-    duration?: number | null
-    amountDue?: number | null
-    paymentMethod?: string | null
-    receiptSent?: boolean
     userId: string
     vehicleId: string
     slotId?: string | null
@@ -7960,13 +7752,6 @@ export namespace Prisma {
 
   export type SlotRequestUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
-    plateNumber?: StringFieldUpdateOperationsInput | string
-    entryTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    exitTime?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    duration?: NullableIntFieldUpdateOperationsInput | number | null
-    amountDue?: NullableFloatFieldUpdateOperationsInput | number | null
-    paymentMethod?: NullableStringFieldUpdateOperationsInput | string | null
-    receiptSent?: BoolFieldUpdateOperationsInput | boolean
     status?: StringFieldUpdateOperationsInput | string
     rejectionReason?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -7978,13 +7763,6 @@ export namespace Prisma {
 
   export type SlotRequestUncheckedUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
-    plateNumber?: StringFieldUpdateOperationsInput | string
-    entryTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    exitTime?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    duration?: NullableIntFieldUpdateOperationsInput | number | null
-    amountDue?: NullableFloatFieldUpdateOperationsInput | number | null
-    paymentMethod?: NullableStringFieldUpdateOperationsInput | string | null
-    receiptSent?: BoolFieldUpdateOperationsInput | boolean
     userId?: StringFieldUpdateOperationsInput | string
     vehicleId?: StringFieldUpdateOperationsInput | string
     slotId?: NullableStringFieldUpdateOperationsInput | string | null
@@ -7996,13 +7774,6 @@ export namespace Prisma {
 
   export type SlotRequestCreateManyInput = {
     id?: string
-    plateNumber: string
-    entryTime: Date | string
-    exitTime?: Date | string | null
-    duration?: number | null
-    amountDue?: number | null
-    paymentMethod?: string | null
-    receiptSent?: boolean
     userId: string
     vehicleId: string
     slotId?: string | null
@@ -8014,13 +7785,6 @@ export namespace Prisma {
 
   export type SlotRequestUpdateManyMutationInput = {
     id?: StringFieldUpdateOperationsInput | string
-    plateNumber?: StringFieldUpdateOperationsInput | string
-    entryTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    exitTime?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    duration?: NullableIntFieldUpdateOperationsInput | number | null
-    amountDue?: NullableFloatFieldUpdateOperationsInput | number | null
-    paymentMethod?: NullableStringFieldUpdateOperationsInput | string | null
-    receiptSent?: BoolFieldUpdateOperationsInput | boolean
     status?: StringFieldUpdateOperationsInput | string
     rejectionReason?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -8029,13 +7793,6 @@ export namespace Prisma {
 
   export type SlotRequestUncheckedUpdateManyInput = {
     id?: StringFieldUpdateOperationsInput | string
-    plateNumber?: StringFieldUpdateOperationsInput | string
-    entryTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    exitTime?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    duration?: NullableIntFieldUpdateOperationsInput | number | null
-    amountDue?: NullableFloatFieldUpdateOperationsInput | number | null
-    paymentMethod?: NullableStringFieldUpdateOperationsInput | string | null
-    receiptSent?: BoolFieldUpdateOperationsInput | boolean
     userId?: StringFieldUpdateOperationsInput | string
     vehicleId?: StringFieldUpdateOperationsInput | string
     slotId?: NullableStringFieldUpdateOperationsInput | string | null
@@ -8327,44 +8084,6 @@ export namespace Prisma {
     updatedAt?: SortOrder
   }
 
-  export type DateTimeNullableFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
-    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
-    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeNullableFilter<$PrismaModel> | Date | string | null
-  }
-
-  export type IntNullableFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel> | null
-    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
-    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
-    lt?: number | IntFieldRefInput<$PrismaModel>
-    lte?: number | IntFieldRefInput<$PrismaModel>
-    gt?: number | IntFieldRefInput<$PrismaModel>
-    gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntNullableFilter<$PrismaModel> | number | null
-  }
-
-  export type FloatNullableFilter<$PrismaModel = never> = {
-    equals?: number | FloatFieldRefInput<$PrismaModel> | null
-    in?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
-    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
-    lt?: number | FloatFieldRefInput<$PrismaModel>
-    lte?: number | FloatFieldRefInput<$PrismaModel>
-    gt?: number | FloatFieldRefInput<$PrismaModel>
-    gte?: number | FloatFieldRefInput<$PrismaModel>
-    not?: NestedFloatNullableFilter<$PrismaModel> | number | null
-  }
-
-  export type BoolFilter<$PrismaModel = never> = {
-    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
-    not?: NestedBoolFilter<$PrismaModel> | boolean
-  }
-
   export type UserScalarRelationFilter = {
     is?: UserWhereInput
     isNot?: UserWhereInput
@@ -8382,13 +8101,6 @@ export namespace Prisma {
 
   export type SlotRequestCountOrderByAggregateInput = {
     id?: SortOrder
-    plateNumber?: SortOrder
-    entryTime?: SortOrder
-    exitTime?: SortOrder
-    duration?: SortOrder
-    amountDue?: SortOrder
-    paymentMethod?: SortOrder
-    receiptSent?: SortOrder
     userId?: SortOrder
     vehicleId?: SortOrder
     slotId?: SortOrder
@@ -8398,20 +8110,8 @@ export namespace Prisma {
     updatedAt?: SortOrder
   }
 
-  export type SlotRequestAvgOrderByAggregateInput = {
-    duration?: SortOrder
-    amountDue?: SortOrder
-  }
-
   export type SlotRequestMaxOrderByAggregateInput = {
     id?: SortOrder
-    plateNumber?: SortOrder
-    entryTime?: SortOrder
-    exitTime?: SortOrder
-    duration?: SortOrder
-    amountDue?: SortOrder
-    paymentMethod?: SortOrder
-    receiptSent?: SortOrder
     userId?: SortOrder
     vehicleId?: SortOrder
     slotId?: SortOrder
@@ -8423,13 +8123,6 @@ export namespace Prisma {
 
   export type SlotRequestMinOrderByAggregateInput = {
     id?: SortOrder
-    plateNumber?: SortOrder
-    entryTime?: SortOrder
-    exitTime?: SortOrder
-    duration?: SortOrder
-    amountDue?: SortOrder
-    paymentMethod?: SortOrder
-    receiptSent?: SortOrder
     userId?: SortOrder
     vehicleId?: SortOrder
     slotId?: SortOrder
@@ -8437,65 +8130,6 @@ export namespace Prisma {
     rejectionReason?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-  }
-
-  export type SlotRequestSumOrderByAggregateInput = {
-    duration?: SortOrder
-    amountDue?: SortOrder
-  }
-
-  export type DateTimeNullableWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
-    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
-    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeNullableWithAggregatesFilter<$PrismaModel> | Date | string | null
-    _count?: NestedIntNullableFilter<$PrismaModel>
-    _min?: NestedDateTimeNullableFilter<$PrismaModel>
-    _max?: NestedDateTimeNullableFilter<$PrismaModel>
-  }
-
-  export type IntNullableWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel> | null
-    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
-    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
-    lt?: number | IntFieldRefInput<$PrismaModel>
-    lte?: number | IntFieldRefInput<$PrismaModel>
-    gt?: number | IntFieldRefInput<$PrismaModel>
-    gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntNullableWithAggregatesFilter<$PrismaModel> | number | null
-    _count?: NestedIntNullableFilter<$PrismaModel>
-    _avg?: NestedFloatNullableFilter<$PrismaModel>
-    _sum?: NestedIntNullableFilter<$PrismaModel>
-    _min?: NestedIntNullableFilter<$PrismaModel>
-    _max?: NestedIntNullableFilter<$PrismaModel>
-  }
-
-  export type FloatNullableWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: number | FloatFieldRefInput<$PrismaModel> | null
-    in?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
-    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
-    lt?: number | FloatFieldRefInput<$PrismaModel>
-    lte?: number | FloatFieldRefInput<$PrismaModel>
-    gt?: number | FloatFieldRefInput<$PrismaModel>
-    gte?: number | FloatFieldRefInput<$PrismaModel>
-    not?: NestedFloatNullableWithAggregatesFilter<$PrismaModel> | number | null
-    _count?: NestedIntNullableFilter<$PrismaModel>
-    _avg?: NestedFloatNullableFilter<$PrismaModel>
-    _sum?: NestedFloatNullableFilter<$PrismaModel>
-    _min?: NestedFloatNullableFilter<$PrismaModel>
-    _max?: NestedFloatNullableFilter<$PrismaModel>
-  }
-
-  export type BoolWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
-    not?: NestedBoolWithAggregatesFilter<$PrismaModel> | boolean
-    _count?: NestedIntFilter<$PrismaModel>
-    _min?: NestedBoolFilter<$PrismaModel>
-    _max?: NestedBoolFilter<$PrismaModel>
   }
   export type JsonNullableFilter<$PrismaModel = never> =
     | PatchUndefined<
@@ -8825,30 +8459,6 @@ export namespace Prisma {
     connect?: ParkingSlotWhereUniqueInput
   }
 
-  export type NullableDateTimeFieldUpdateOperationsInput = {
-    set?: Date | string | null
-  }
-
-  export type NullableIntFieldUpdateOperationsInput = {
-    set?: number | null
-    increment?: number
-    decrement?: number
-    multiply?: number
-    divide?: number
-  }
-
-  export type NullableFloatFieldUpdateOperationsInput = {
-    set?: number | null
-    increment?: number
-    decrement?: number
-    multiply?: number
-    divide?: number
-  }
-
-  export type BoolFieldUpdateOperationsInput = {
-    set?: boolean
-  }
-
   export type UserUpdateOneRequiredWithoutSlotRequestsNestedInput = {
     create?: XOR<UserCreateWithoutSlotRequestsInput, UserUncheckedCreateWithoutSlotRequestsInput>
     connectOrCreate?: UserCreateOrConnectWithoutSlotRequestsInput
@@ -8999,87 +8609,6 @@ export namespace Prisma {
     gte?: number | IntFieldRefInput<$PrismaModel>
     not?: NestedIntNullableFilter<$PrismaModel> | number | null
   }
-
-  export type NestedDateTimeNullableFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
-    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
-    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeNullableFilter<$PrismaModel> | Date | string | null
-  }
-
-  export type NestedFloatNullableFilter<$PrismaModel = never> = {
-    equals?: number | FloatFieldRefInput<$PrismaModel> | null
-    in?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
-    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
-    lt?: number | FloatFieldRefInput<$PrismaModel>
-    lte?: number | FloatFieldRefInput<$PrismaModel>
-    gt?: number | FloatFieldRefInput<$PrismaModel>
-    gte?: number | FloatFieldRefInput<$PrismaModel>
-    not?: NestedFloatNullableFilter<$PrismaModel> | number | null
-  }
-
-  export type NestedBoolFilter<$PrismaModel = never> = {
-    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
-    not?: NestedBoolFilter<$PrismaModel> | boolean
-  }
-
-  export type NestedDateTimeNullableWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
-    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
-    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeNullableWithAggregatesFilter<$PrismaModel> | Date | string | null
-    _count?: NestedIntNullableFilter<$PrismaModel>
-    _min?: NestedDateTimeNullableFilter<$PrismaModel>
-    _max?: NestedDateTimeNullableFilter<$PrismaModel>
-  }
-
-  export type NestedIntNullableWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel> | null
-    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
-    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
-    lt?: number | IntFieldRefInput<$PrismaModel>
-    lte?: number | IntFieldRefInput<$PrismaModel>
-    gt?: number | IntFieldRefInput<$PrismaModel>
-    gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntNullableWithAggregatesFilter<$PrismaModel> | number | null
-    _count?: NestedIntNullableFilter<$PrismaModel>
-    _avg?: NestedFloatNullableFilter<$PrismaModel>
-    _sum?: NestedIntNullableFilter<$PrismaModel>
-    _min?: NestedIntNullableFilter<$PrismaModel>
-    _max?: NestedIntNullableFilter<$PrismaModel>
-  }
-
-  export type NestedFloatNullableWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: number | FloatFieldRefInput<$PrismaModel> | null
-    in?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
-    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
-    lt?: number | FloatFieldRefInput<$PrismaModel>
-    lte?: number | FloatFieldRefInput<$PrismaModel>
-    gt?: number | FloatFieldRefInput<$PrismaModel>
-    gte?: number | FloatFieldRefInput<$PrismaModel>
-    not?: NestedFloatNullableWithAggregatesFilter<$PrismaModel> | number | null
-    _count?: NestedIntNullableFilter<$PrismaModel>
-    _avg?: NestedFloatNullableFilter<$PrismaModel>
-    _sum?: NestedFloatNullableFilter<$PrismaModel>
-    _min?: NestedFloatNullableFilter<$PrismaModel>
-    _max?: NestedFloatNullableFilter<$PrismaModel>
-  }
-
-  export type NestedBoolWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
-    not?: NestedBoolWithAggregatesFilter<$PrismaModel> | boolean
-    _count?: NestedIntFilter<$PrismaModel>
-    _min?: NestedBoolFilter<$PrismaModel>
-    _max?: NestedBoolFilter<$PrismaModel>
-  }
   export type NestedJsonNullableFilter<$PrismaModel = never> =
     | PatchUndefined<
         Either<Required<NestedJsonNullableFilterBase<$PrismaModel>>, Exclude<keyof Required<NestedJsonNullableFilterBase<$PrismaModel>>, 'path'>>,
@@ -9138,13 +8667,6 @@ export namespace Prisma {
 
   export type SlotRequestCreateWithoutUserInput = {
     id?: string
-    plateNumber: string
-    entryTime: Date | string
-    exitTime?: Date | string | null
-    duration?: number | null
-    amountDue?: number | null
-    paymentMethod?: string | null
-    receiptSent?: boolean
     status?: string
     rejectionReason?: string | null
     createdAt?: Date | string
@@ -9155,13 +8677,6 @@ export namespace Prisma {
 
   export type SlotRequestUncheckedCreateWithoutUserInput = {
     id?: string
-    plateNumber: string
-    entryTime: Date | string
-    exitTime?: Date | string | null
-    duration?: number | null
-    amountDue?: number | null
-    paymentMethod?: string | null
-    receiptSent?: boolean
     vehicleId: string
     slotId?: string | null
     status?: string
@@ -9255,13 +8770,6 @@ export namespace Prisma {
     OR?: SlotRequestScalarWhereInput[]
     NOT?: SlotRequestScalarWhereInput | SlotRequestScalarWhereInput[]
     id?: StringFilter<"SlotRequest"> | string
-    plateNumber?: StringFilter<"SlotRequest"> | string
-    entryTime?: DateTimeFilter<"SlotRequest"> | Date | string
-    exitTime?: DateTimeNullableFilter<"SlotRequest"> | Date | string | null
-    duration?: IntNullableFilter<"SlotRequest"> | number | null
-    amountDue?: FloatNullableFilter<"SlotRequest"> | number | null
-    paymentMethod?: StringNullableFilter<"SlotRequest"> | string | null
-    receiptSent?: BoolFilter<"SlotRequest"> | boolean
     userId?: StringFilter<"SlotRequest"> | string
     vehicleId?: StringFilter<"SlotRequest"> | string
     slotId?: StringNullableFilter<"SlotRequest"> | string | null
@@ -9329,13 +8837,6 @@ export namespace Prisma {
 
   export type SlotRequestCreateWithoutVehicleInput = {
     id?: string
-    plateNumber: string
-    entryTime: Date | string
-    exitTime?: Date | string | null
-    duration?: number | null
-    amountDue?: number | null
-    paymentMethod?: string | null
-    receiptSent?: boolean
     status?: string
     rejectionReason?: string | null
     createdAt?: Date | string
@@ -9346,13 +8847,6 @@ export namespace Prisma {
 
   export type SlotRequestUncheckedCreateWithoutVehicleInput = {
     id?: string
-    plateNumber: string
-    entryTime: Date | string
-    exitTime?: Date | string | null
-    duration?: number | null
-    amountDue?: number | null
-    paymentMethod?: string | null
-    receiptSent?: boolean
     userId: string
     slotId?: string | null
     status?: string
@@ -9424,13 +8918,6 @@ export namespace Prisma {
 
   export type SlotRequestCreateWithoutSlotInput = {
     id?: string
-    plateNumber: string
-    entryTime: Date | string
-    exitTime?: Date | string | null
-    duration?: number | null
-    amountDue?: number | null
-    paymentMethod?: string | null
-    receiptSent?: boolean
     status?: string
     rejectionReason?: string | null
     createdAt?: Date | string
@@ -9441,13 +8928,6 @@ export namespace Prisma {
 
   export type SlotRequestUncheckedCreateWithoutSlotInput = {
     id?: string
-    plateNumber: string
-    entryTime: Date | string
-    exitTime?: Date | string | null
-    duration?: number | null
-    amountDue?: number | null
-    paymentMethod?: string | null
-    receiptSent?: boolean
     userId: string
     vehicleId: string
     status?: string
@@ -9742,13 +9222,6 @@ export namespace Prisma {
 
   export type SlotRequestCreateManyUserInput = {
     id?: string
-    plateNumber: string
-    entryTime: Date | string
-    exitTime?: Date | string | null
-    duration?: number | null
-    amountDue?: number | null
-    paymentMethod?: string | null
-    receiptSent?: boolean
     vehicleId: string
     slotId?: string | null
     status?: string
@@ -9798,13 +9271,6 @@ export namespace Prisma {
 
   export type SlotRequestUpdateWithoutUserInput = {
     id?: StringFieldUpdateOperationsInput | string
-    plateNumber?: StringFieldUpdateOperationsInput | string
-    entryTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    exitTime?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    duration?: NullableIntFieldUpdateOperationsInput | number | null
-    amountDue?: NullableFloatFieldUpdateOperationsInput | number | null
-    paymentMethod?: NullableStringFieldUpdateOperationsInput | string | null
-    receiptSent?: BoolFieldUpdateOperationsInput | boolean
     status?: StringFieldUpdateOperationsInput | string
     rejectionReason?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -9815,13 +9281,6 @@ export namespace Prisma {
 
   export type SlotRequestUncheckedUpdateWithoutUserInput = {
     id?: StringFieldUpdateOperationsInput | string
-    plateNumber?: StringFieldUpdateOperationsInput | string
-    entryTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    exitTime?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    duration?: NullableIntFieldUpdateOperationsInput | number | null
-    amountDue?: NullableFloatFieldUpdateOperationsInput | number | null
-    paymentMethod?: NullableStringFieldUpdateOperationsInput | string | null
-    receiptSent?: BoolFieldUpdateOperationsInput | boolean
     vehicleId?: StringFieldUpdateOperationsInput | string
     slotId?: NullableStringFieldUpdateOperationsInput | string | null
     status?: StringFieldUpdateOperationsInput | string
@@ -9832,13 +9291,6 @@ export namespace Prisma {
 
   export type SlotRequestUncheckedUpdateManyWithoutUserInput = {
     id?: StringFieldUpdateOperationsInput | string
-    plateNumber?: StringFieldUpdateOperationsInput | string
-    entryTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    exitTime?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    duration?: NullableIntFieldUpdateOperationsInput | number | null
-    amountDue?: NullableFloatFieldUpdateOperationsInput | number | null
-    paymentMethod?: NullableStringFieldUpdateOperationsInput | string | null
-    receiptSent?: BoolFieldUpdateOperationsInput | boolean
     vehicleId?: StringFieldUpdateOperationsInput | string
     slotId?: NullableStringFieldUpdateOperationsInput | string | null
     status?: StringFieldUpdateOperationsInput | string
@@ -9870,13 +9322,6 @@ export namespace Prisma {
 
   export type SlotRequestCreateManyVehicleInput = {
     id?: string
-    plateNumber: string
-    entryTime: Date | string
-    exitTime?: Date | string | null
-    duration?: number | null
-    amountDue?: number | null
-    paymentMethod?: string | null
-    receiptSent?: boolean
     userId: string
     slotId?: string | null
     status?: string
@@ -9887,13 +9332,6 @@ export namespace Prisma {
 
   export type SlotRequestUpdateWithoutVehicleInput = {
     id?: StringFieldUpdateOperationsInput | string
-    plateNumber?: StringFieldUpdateOperationsInput | string
-    entryTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    exitTime?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    duration?: NullableIntFieldUpdateOperationsInput | number | null
-    amountDue?: NullableFloatFieldUpdateOperationsInput | number | null
-    paymentMethod?: NullableStringFieldUpdateOperationsInput | string | null
-    receiptSent?: BoolFieldUpdateOperationsInput | boolean
     status?: StringFieldUpdateOperationsInput | string
     rejectionReason?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -9904,13 +9342,6 @@ export namespace Prisma {
 
   export type SlotRequestUncheckedUpdateWithoutVehicleInput = {
     id?: StringFieldUpdateOperationsInput | string
-    plateNumber?: StringFieldUpdateOperationsInput | string
-    entryTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    exitTime?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    duration?: NullableIntFieldUpdateOperationsInput | number | null
-    amountDue?: NullableFloatFieldUpdateOperationsInput | number | null
-    paymentMethod?: NullableStringFieldUpdateOperationsInput | string | null
-    receiptSent?: BoolFieldUpdateOperationsInput | boolean
     userId?: StringFieldUpdateOperationsInput | string
     slotId?: NullableStringFieldUpdateOperationsInput | string | null
     status?: StringFieldUpdateOperationsInput | string
@@ -9921,13 +9352,6 @@ export namespace Prisma {
 
   export type SlotRequestUncheckedUpdateManyWithoutVehicleInput = {
     id?: StringFieldUpdateOperationsInput | string
-    plateNumber?: StringFieldUpdateOperationsInput | string
-    entryTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    exitTime?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    duration?: NullableIntFieldUpdateOperationsInput | number | null
-    amountDue?: NullableFloatFieldUpdateOperationsInput | number | null
-    paymentMethod?: NullableStringFieldUpdateOperationsInput | string | null
-    receiptSent?: BoolFieldUpdateOperationsInput | boolean
     userId?: StringFieldUpdateOperationsInput | string
     slotId?: NullableStringFieldUpdateOperationsInput | string | null
     status?: StringFieldUpdateOperationsInput | string
@@ -9938,13 +9362,6 @@ export namespace Prisma {
 
   export type SlotRequestCreateManySlotInput = {
     id?: string
-    plateNumber: string
-    entryTime: Date | string
-    exitTime?: Date | string | null
-    duration?: number | null
-    amountDue?: number | null
-    paymentMethod?: string | null
-    receiptSent?: boolean
     userId: string
     vehicleId: string
     status?: string
@@ -9955,13 +9372,6 @@ export namespace Prisma {
 
   export type SlotRequestUpdateWithoutSlotInput = {
     id?: StringFieldUpdateOperationsInput | string
-    plateNumber?: StringFieldUpdateOperationsInput | string
-    entryTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    exitTime?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    duration?: NullableIntFieldUpdateOperationsInput | number | null
-    amountDue?: NullableFloatFieldUpdateOperationsInput | number | null
-    paymentMethod?: NullableStringFieldUpdateOperationsInput | string | null
-    receiptSent?: BoolFieldUpdateOperationsInput | boolean
     status?: StringFieldUpdateOperationsInput | string
     rejectionReason?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -9972,13 +9382,6 @@ export namespace Prisma {
 
   export type SlotRequestUncheckedUpdateWithoutSlotInput = {
     id?: StringFieldUpdateOperationsInput | string
-    plateNumber?: StringFieldUpdateOperationsInput | string
-    entryTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    exitTime?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    duration?: NullableIntFieldUpdateOperationsInput | number | null
-    amountDue?: NullableFloatFieldUpdateOperationsInput | number | null
-    paymentMethod?: NullableStringFieldUpdateOperationsInput | string | null
-    receiptSent?: BoolFieldUpdateOperationsInput | boolean
     userId?: StringFieldUpdateOperationsInput | string
     vehicleId?: StringFieldUpdateOperationsInput | string
     status?: StringFieldUpdateOperationsInput | string
@@ -9989,13 +9392,6 @@ export namespace Prisma {
 
   export type SlotRequestUncheckedUpdateManyWithoutSlotInput = {
     id?: StringFieldUpdateOperationsInput | string
-    plateNumber?: StringFieldUpdateOperationsInput | string
-    entryTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    exitTime?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    duration?: NullableIntFieldUpdateOperationsInput | number | null
-    amountDue?: NullableFloatFieldUpdateOperationsInput | number | null
-    paymentMethod?: NullableStringFieldUpdateOperationsInput | string | null
-    receiptSent?: BoolFieldUpdateOperationsInput | boolean
     userId?: StringFieldUpdateOperationsInput | string
     vehicleId?: StringFieldUpdateOperationsInput | string
     status?: StringFieldUpdateOperationsInput | string

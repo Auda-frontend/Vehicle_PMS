@@ -22,10 +22,10 @@ model User {
 }
 
 model Vehicle {
-  id           String       @id @default(uuid())
-  plateNumber  String       @unique
-  vehicleType  String       // "car", "motorcycle", "truck"
-  size         String       // "small", "medium", "large"
+  id           String        @id @default(uuid())
+  plateNumber  String        @unique
+  vehicleType  String // "car", "motorcycle", "truck"
+  size         String // "small", "medium", "large"
   color        String?
   userId       String
   user         User?         @relation(fields: [userId], references: [id])
@@ -37,10 +37,10 @@ model Vehicle {
 model ParkingSlot {
   id           String        @id @default(uuid())
   slotNumber   String        @unique
-  size         String        // "small", "medium", "large"
-  vehicleType  String        // "car", "motorcycle", "truck"
+  size         String // "small", "medium", "large"
+  vehicleType  String // "car", "motorcycle", "truck"
   status       String        @default("available") // "available" or "unavailable"
-  location     String?       // "north", "south", "east", "west"
+  location     String? // "north", "south", "east", "west"
   slotRequests SlotRequest[]
   createdAt    DateTime      @default(now())
   updatedAt    DateTime      @updatedAt
@@ -50,24 +50,17 @@ model ParkingSlot {
 }
 
 model SlotRequest {
-  id          String       @id @default(uuid())
-  plateNumber String
-  entryTime   DateTime
-  exitTime    DateTime?
-  duration    Int?
-  amountDue   Float?
-  paymentMethod String?    // "cash", "momo", "credit_card"
-  receiptSent   Boolean    @default(false)
-  userId      String
-  user        User         @relation(fields: [userId], references: [id])
-  vehicleId   String
-  vehicle     Vehicle      @relation(fields: [vehicleId], references: [id])
-  slotId      String?      // Null until approved
-  slot        ParkingSlot? @relation(fields: [slotId], references: [id])
-  status      String       @default("pending") // "pending", "approved", "rejected"
+  id              String       @id @default(uuid())
+  userId          String
+  user            User         @relation(fields: [userId], references: [id])
+  vehicleId       String
+  vehicle         Vehicle      @relation(fields: [vehicleId], references: [id])
+  slotId          String? // Null until approved
+  slot            ParkingSlot? @relation(fields: [slotId], references: [id])
+  status          String       @default("pending") // "pending", "approved", "rejected"
   rejectionReason String?
-  createdAt   DateTime     @default(now())
-  updatedAt   DateTime     @updatedAt
+  createdAt       DateTime     @default(now())
+  updatedAt       DateTime     @updatedAt
 
   @@index([userId])
   @@index([status])
@@ -77,7 +70,7 @@ model AuditLog {
   id        String   @id @default(uuid())
   userId    String?
   user      User?    @relation(fields: [userId], references: [id])
-  action    String   // "request_approved", "slot_created", etc.
-  metadata  Json?    // { slotId: "123", vehicleId: "456" }
+  action    String // "request_approved", "slot_created", etc.
+  metadata  Json? // { slotId: "123", vehicleId: "456" }
   createdAt DateTime @default(now())
 }

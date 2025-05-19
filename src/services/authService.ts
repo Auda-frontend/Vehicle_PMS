@@ -5,6 +5,12 @@ import { AuthPayload, UserResponse } from "../models/userTypes";
 
 const prisma = new PrismaClient();
 
+export const userByRole = {
+    async findUserByRole(role: string) {
+        return await prisma.user.findFirst({ where: { role } });
+    }
+}
+
 export const registerUser = async (
     payload: AuthPayload & { name: string } & { role: string }
 ): Promise<UserResponse> => {
